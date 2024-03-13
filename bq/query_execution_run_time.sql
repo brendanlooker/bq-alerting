@@ -12,7 +12,7 @@ select  'query_execution_run_time' as incident_type,
                 job_id,
                 start_time as job_start,
                 timestamp_diff(current_timestamp(), start_time, second) as query_execution_run_time
-            FROM `brendanlooker`.`region-EU`.INFORMATION_SCHEMA.JOBS_BY_PROJECT
+            FROM `project`.`region-EU`.INFORMATION_SCHEMA.JOBS_BY_PROJECT
             WHERE timestamp_diff(current_timestamp(), start_time, second) > 120
             AND   end_time is null
     )
