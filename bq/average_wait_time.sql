@@ -12,7 +12,7 @@ select  'average_wait_time' as incident_type,
                     project_id, 
                     TIMESTAMP_SECONDS(600 * DIV(UNIX_SECONDS(creation_time) + 300, 600)) AS usage_time, 
                     CAST(AVG(js.wait_ms_avg)/60000 AS NUMERIC) AS avg_wait_time_min
-                  FROM `brendanlooker`.`region-EU`.INFORMATION_SCHEMA.JOBS_BY_PROJECT,
+                  FROM `project`.`region-EU`.INFORMATION_SCHEMA.JOBS_BY_PROJECT,
                   UNNEST(job_stages) AS js 
                   WHERE TIMESTAMP(creation_time) >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 24 HOUR) 
                   GROUP BY project_id, usage_time 
