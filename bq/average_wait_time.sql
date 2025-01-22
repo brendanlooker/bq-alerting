@@ -1,3 +1,5 @@
+# Update the project and region as appropriate
+          
 insert into bq_cost_optimization.bq_alerting (incident_type, project_id, job_id, message, log_ts, incident_processed)
 select  'average_wait_time' as incident_type,
           project_id,
