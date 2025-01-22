@@ -4,4 +4,4 @@ Using BigQuery Information Schema to identify long running BQ queries and querie
 
 Log 'Incidents' in a BigQuery table
 
-Trigger a Cloud Function to generate a log file that can then be used to trigger an Alert to notify support.
+Trigger a Cloud Function to generate a Cloud Logging entry that can then be used to trigger an Alert to notify support.
